@@ -1,0 +1,13 @@
+.app__layout {
+  background: rgb(55, 55, 55);
+  width: -webkit-fill-available;
+  width: -moz-available;
+  height: -webkit-fill-available;
+  height: -moz-avaialble;
+}
+
+#auth-layout {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}

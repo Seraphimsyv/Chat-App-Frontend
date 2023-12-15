@@ -1,0 +1,109 @@
+#app {
+  display: flex;
+  position: relative;
+  margin: auto;
+  padding: 1px;
+  width: 80%;
+  height: 80%;
+  background: rgb(55, 55, 55);
+  z-index: 9999;
+}
+
+@media screen and (max-width: 1024px) {
+  #app {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #app {
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 686px) {
+  #app {
+    width: 95vw;
+  }
+}
+
+@keyframes AnimationChatBackground {
+  0%, 100% { background: linear-gradient(0deg, #f3f3f3, #8a8a8a); }
+  2.5%, 97.5% { background: linear-gradient(18deg, #f3f3f3, #8a8a8a); }
+  5%, 95% { background: linear-gradient(36deg, #f3f3f3, #8a8a8a); }
+  7.5%, 92.5% { background: linear-gradient(54deg, #f3f3f3, #8a8a8a); }
+  10%, 90% { background: linear-gradient(72deg, #f3f3f3, #8a8a8a); }
+  12.5%, 87.5% { background: linear-gradient(90deg, #f3f3f3, #8a8a8a); }
+  15%, 85% { background: linear-gradient(108deg, #f3f3f3, #8a8a8a); }
+  17.5%, 82.5% { background: linear-gradient(126deg, #f3f3f3, #8a8a8a); }
+  20%, 80% { background: linear-gradient(144deg, #f3f3f3, #8a8a8a); }
+  22.5%, 77.5% { background: linear-gradient(162deg, #f3f3f3, #8a8a8a); }
+  25%, 75% { background: linear-gradient(180deg, #f3f3f3, #8a8a8a); }
+  27.5%, 72.5% { background: linear-gradient(198deg, #f3f3f3, #8a8a8a); }
+  30%, 70% { background: linear-gradient(216deg, #f3f3f3, #8a8a8a); }
+  32.5%, 67.5% { background: linear-gradient(234deg, #f3f3f3, #8a8a8a); }
+  35%, 65% { background: linear-gradient(252deg, #f3f3f3, #8a8a8a); }
+  37.5%, 62.5% { background: linear-gradient(270deg, #f3f3f3, #8a8a8a); }
+  40%, 60% { background: linear-gradient(288deg, #f3f3f3, #8a8a8a); }
+  42.5%, 57.5% { background: linear-gradient(308deg, #f3f3f3, #8a8a8a); }
+  45%, 55% { background: linear-gradient(326deg, #f3f3f3, #8a8a8a); }
+  47.5%, 52.5% { background: linear-gradient(344deg, #f3f3f3, #8a8a8a); }
+}
+
+#loader {
+  margin: auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+}
+#loader h1 {
+ position: absolute;
+ top: 125%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ color: rgb(225, 225, 225);
+ text-shadow: 0px 0px 6px rgb(155, 155, 155);
+}
+#loader h1::after {
+  content: '';
+  animation-name: AnimationDots;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+#loader::before , #loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  animation: prixClipFix 2s linear infinite , rotate 1.5s linear infinite;
+}
+#loader::after{
+  border-color: cyan;
+  animation: prixClipFix 2s linear infinite , rotate 0.75s linear infinite reverse;
+  inset: -10px;
+}
+
+@keyframes AnimationDots {
+  0% { content: '.'; }
+  50% { content: '..'; }
+  100% { content: '...'; }
+}
+
+@keyframes rotate {
+  0%   {transform: rotate(0deg)}
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}

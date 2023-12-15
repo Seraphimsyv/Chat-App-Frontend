@@ -1,0 +1,225 @@
+/**
+
+  Chat panel
+
+**/
+#chat-panel {
+  background-color: rgb(45, 45, 45);
+  overflow-y: auto;
+}
+#chat-panel::-webkit-scrollbar {
+  width: 2px;
+}
+#chat-panel::-webkit-scrollbar-track {
+  background-color: rgb(25, 25, 25,);
+}
+#chat-panel::-webkit-scrollbar-thumb {
+  background-color: rgb(90,90,90);
+}
+#chat-panel
+.chat_panel_item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgb(60, 60, 60);
+  border-radius: 0;
+  overflow: hidden;
+}
+#chat-panel
+.chat_panel_item button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  border-radius: 0;
+}
+#chat-panel
+.chat_panel_item_info {
+  padding-top: .2em;
+  padding-bottom: .2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .25em;
+  text-align: start;
+  position: relative;
+}
+#chat-panel
+.chat_panel_item_info_title {
+  font-size: 1.5vh;
+  color: rgb(235, 235, 235);
+}
+#chat-panel
+.chat_panel_item_info_content {
+  width: 90%;
+  color: rgb(215, 215, 215);
+  font-size: 1.25vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#chat-panel
+.chat_panel_item_unread_count {
+  position: absolute;
+  top: 35%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  margin-left: 0;
+  margin-right: 1em;
+  padding: .25em;
+  width: 18px;
+  height: 18px;
+  font-size: 2vh;
+  border-radius: 100%;
+  background: rgb(15, 15, 15);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/**
+
+  Chat content
+
+**/
+#chat-content {
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  height: 100%;
+  color: whitesmoke;
+  background-color: rgb(30, 30, 30);
+  overflow: hidden;
+}
+#chat-content
+#chat-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(25, 25, 25);
+}
+#chat-content
+#chat-toolbar
+#chat-info {
+  padding: .5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#chat-content
+#chat-toolbar
+#chat-info
+#chat-receiver-status {
+  font-size: 1.5vh;
+}
+#chat-content
+#chat-toolbar
+#chat-info
+#chat-receiver-status.online {
+  color: cyan;
+  text-shadow: 0px 0px 6px cyan;
+}
+#chat-content
+#chat-toolbar
+#chat-info
+#chat-receiver-status.offline {
+  color: rgb(125, 125, 125);
+}
+
+#chat-content
+#chat-messages-block {
+  overflow-y: auto;
+}
+#chat-content
+#chat-messages-block::-webkit-scrollbar {
+  width: 10px;
+}
+#chat-content
+#chat-messages-block::-webkit-scrollbar-track {
+  background-color: rgb(55, 55, 55);
+}
+#chat-content
+#chat-messages-block::-webkit-scrollbar-thumb {
+  background-color: rgb(15, 15, 15);
+}
+#chat-content
+#chat-messages-list {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#chat-content
+.chat_content_messages_writer {
+  margin: .5em;
+  color: rgb(155, 155, 155);
+  font-size: 2vh;
+}
+#chat-content
+.chat_content_messages_writer::after {
+  content: '';
+  animation-name: AnimationMessagesWriter;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+#chat-content
+.chat_content_messages_global_date {
+  margin: auto;
+  padding: .5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  width: fit-content;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: rgb(155, 155, 155);
+  background-color: rgb(25, 25, 25);
+  border-radius: 10px;
+  font-size: 1.5vh;
+  text-align: center;
+}
+#chat-content
+.chat_content_messages_message {
+  margin: .5em;
+  padding: .5em;
+  width: fit-content;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+#chat-content
+.chat_content_messages_message span:first-child {
+  font-size: 2vh;
+}
+#chat-content
+.chat_content_messages_message span:last-child {
+  padding-right: .5em;
+  color: rgb(225, 225, 225);
+  font-size: 1.5vh;
+  text-align: end;
+}
+#chat-content
+.chat_content_messages_message.receiver {
+  border-radius: 10px 10px 10px 0px;
+  background-color: #9c27b0;
+}
+#chat-content
+.chat_content_messages_message.owner {
+  margin-left: auto;
+  border-radius: 10px 10px 0px 10px;
+  background-color: #2196f3;
+}
+
+/**
+
+  Animations 
+
+**/
+
+@keyframes AnimationMessagesWriter {
+  0% { content: '.'; }
+  50% { content: '..'; }
+  100% { content: '...'; }
+}

@@ -1,0 +1,28 @@
+#aside-block {
+  z-index: 999;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.5);
+  overflow: hidden;
+}
+#aside-block.hidden {
+  display: none;
+}
+#aside-block.show {
+  display: block;
+}
+
+#aside-menu {
+  height: 100%;
+  background-color: rgb(55, 55, 55);
+}
+
+#aside-block.hidden #aside-menu {
+  width: 0%;
+}
+#aside-block.show #aside-menu {
+  width: 30%;
+}

@@ -1,0 +1,68 @@
+/**
+
+  Global pages styles
+
+**/
+.app__page {
+  height: 100%;
+}
+
+/**
+
+  Auth pages styles
+
+**/
+#chat-page {
+  height: calc(100% - 44px);
+  display: grid;
+  grid-template-columns: 25% 75%;
+  background-color: rgb(55, 55, 55);
+}
+
+#chat-page #chat-input {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(25, 25, 25);
+}
+#chat-page #chat-input
+div::before {
+  border-bottom: 2px solid rgba(187, 187, 187, 0.5)!important;
+}
+#chat-page #chat-input input {
+  color: whitesmoke;
+}
+
+/**
+
+  UnAuth pages styles
+
+**/
+#log-in-page,
+#sign-up-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+#log-in-form,
+#sign-up-form {
+  margin: auto;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+}
+#log-in-form label, 
+#log-in-form input,
+#sign-up-form label,
+#sign-up-form input {
+  color: whitesmoke;
+}
+#log-in-form
+.css-syydd5-MuiInputBase-root-MuiInput-root:before,
+#sign-up-form
+.css-syydd5-MuiInputBase-root-MuiInput-root:before {
+  border-bottom: 1px solid rgba(100, 100, 100, 0.5)!important;
+}
